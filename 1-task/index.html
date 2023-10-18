@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        />
+        <link rel="stylesheet" href="./styles/main.css" />
+        <script defer src="script.js"></script>
+        <title>Front-End Test</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li>
+                        <button class="nav-list__link" id="my-fonts">
+                            My fonts
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            id="buy-fonts"
+                            class="nav-list__link nav-list__link_active"
+                        >
+                            Buy fonts
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <main class="main">
+                <div class="tab-content tab active-tab" data-tab="buy-fonts">
+                    <div class="card">
+                        <input
+                            type="radio"
+                            id="merriweather"
+                            name="merri"
+                            class="card__radio"
+                            checked
+                        />
+                        <label class="card__content" for="merriweather">
+                            <div
+                                class="card__square card__square_green"
+                                data-letter="M"
+                            ></div>
+                            <p class="card__description">
+                                Merriweather project is led by Sorkin Type
+                            </p>
+                        </label>
+                    </div>
+                    <div class="card">
+                        <input
+                            type="radio"
+                            id="noto"
+                            class="card__radio"
+                            name="merri"
+                        />
+                        <label class="card__content grid" for="noto">
+                            <div
+                                class="card__square card__square_pink"
+                                data-letter="R"
+                            ></div>
+                            <p class="card__description">
+                                Roboto doesn't compromise, allowing letters
+                            </p>
+                        </label>
+                    </div>
+                    <div class="card">
+                        <input
+                            type="radio"
+                            id="roboto"
+                            class="card__radio"
+                            name="merri"
+                        />
+                        <label class="card__content grid" for="roboto">
+                            <div
+                                class="card__square card__square_blue"
+                                data-letter="NS"
+                            ></div>
+                            <p class="card__description">
+                                Noto sans covers over 30 scripts
+                            </p>
+                        </label>
+                    </div>
+                </div>
+                <p class="tab-content2 tab" data-tab="my-fonts">dummy text</p>
+            </main>
+        </div>
+    </body>
+</html>

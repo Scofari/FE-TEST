@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap");
+:is(*, *::before, *::after) {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: "Montserrat", system-ui, apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px 0; }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px; }
+
+.main {
+  padding: 50px;
+  max-width: 750px;
+  min-width: 300px;
+  width: 60vw;
+  border: 3px rgba(0, 0, 0, 0.2) solid;
+  border-radius: 15px; }
+  @media (max-width: 1000px) {
+    .main {
+      width: fit-content;
+      display: grid;
+      place-items: center; } }
+
+.nav {
+  margin-right: 20px; }
+  .nav-list {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    color: gray; }
+    .nav-list__link {
+      border: none;
+      text-transform: uppercase;
+      background-color: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.2);
+      font-weight: 600;
+      font-size: 0.8rem; }
+      .nav-list__link_active {
+        color: red;
+        transition: color 0.4s ease; }
+
+.tab-content {
+  opacity: 0;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "merriweather roboto" "merriweather noto"; }
+  @media (max-width: 1000px) {
+    .tab-content {
+      grid-template-columns: 1fr;
+      grid-template-areas: "merriweather" "roboto" "noto"; } }
+
+.card {
+  display: grid;
+  place-items: center;
+  position: relative; }
+  .card:first-of-type {
+    grid-area: merriweather;
+    max-width: 140px; }
+    .card:first-of-type .card__description {
+      margin-left: 20px; }
+  .card:nth-of-type(2) {
+    grid-area: roboto; }
+    @media (max-width: 1000px) {
+      .card:nth-of-type(2) {
+        max-width: 140px; } }
+  .card:nth-of-type(3) {
+    grid-area: noto; }
+    @media (max-width: 1000px) {
+      .card:nth-of-type(3) {
+        max-width: 140px; } }
+  .card__radio {
+    appearance: none; }
+    .card__radio:checked {
+      opacity: 1; }
+      .card__radio:checked ~ * {
+        opacity: 1;
+        transition: opacity 0.2s ease-in; }
+  .card__square_green {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    outline: 2px solid black;
+    outline-offset: 4px;
+    position: relative;
+    background-color: #04a454;
+    height: 140px;
+    width: 140px;
+    margin-bottom: 30px; }
+    .card__square_green::before {
+      content: attr(data-letter);
+      font-size: 40px;
+      font-weight: 600;
+      opacity: 0.5;
+      color: white;
+      position: absolute;
+      bottom: 5px;
+      left: 15px; }
+  .card__square_pink {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    outline: 2px solid black;
+    outline-offset: 4px;
+    position: relative;
+    background-color: #f27ec0; }
+    .card__square_pink::before {
+      content: attr(data-letter);
+      font-size: 30px;
+      font-weight: 600;
+      opacity: 0.5;
+      color: white;
+      position: absolute;
+      bottom: 5px;
+      left: 15px; }
+    @media (max-width: 1000px) {
+      .card__square_pink {
+        height: 140px;
+        width: 140px;
+        margin-bottom: 30px; } }
+  .card__square_blue {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    outline: 2px solid black;
+    outline-offset: 4px;
+    position: relative;
+    background-color: #056cfc; }
+    .card__square_blue::before {
+      content: attr(data-letter);
+      font-size: 30px;
+      font-weight: 600;
+      opacity: 0.6;
+      color: white;
+      position: absolute;
+      bottom: 5px;
+      left: 15px; }
+    @media (max-width: 1000px) {
+      .card__square_blue {
+        height: 140px;
+        width: 140px;
+        margin-bottom: 30px; } }
+  .card__content {
+    opacity: 0.5; }
+    @media (min-width: 1000px) {
+      .card__content.grid {
+        display: grid;
+        place-items: center;
+        gap: 30px;
+        grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 1000px) {
+      .card__content .card__description {
+        margin-left: 20px; } }
+  .card__description {
+    position: relative; }
+    .card__description::before {
+      content: "";
+      background-color: #959595;
+      height: 10px;
+      width: 10px;
+      border-radius: 100%;
+      position: absolute;
+      top: 5px;
+      left: -20px; }
+
+.tab-content2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; }
+
+.active-tab {
+  opacity: 1;
+  transition: opacity 0.3s ease-in; }
